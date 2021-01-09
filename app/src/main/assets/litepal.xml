@@ -1,0 +1,14 @@
+<litepal>
+
+    <!-- 数据库名称-->
+    <dbname value="cool_weather" />
+
+    <version value="1" />
+
+    <list>
+        <mapping class="com.example.coolweather.db.ProviceEntity" />
+        <mapping class="com.example.coolweather.db.CityEntity" />
+        <mapping class="com.example.coolweather.db.CountyEntity" />
+
+    </list>
+</litepal>
