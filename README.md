@@ -1,1 +1,3 @@
 # coolweather
+第一行代码的酷欧天气APP练习
+后面希望在这个APP里扩展一些有趣的idea
