@@ -23,7 +23,7 @@ public class Utility {
                 for (int i = 0; i < proviceData.length(); i++) {
                     JSONObject proviceObject = proviceData.getJSONObject(i);
                     ProviceEntity proviceEntity = new ProviceEntity();
-                    proviceEntity.setId(proviceObject.getInt("id"));
+                    proviceEntity.setProviceCode(proviceObject.getInt("id"));
                     proviceEntity.setProviceName(proviceObject.getString("name"));
                     proviceEntity.save(); // 保存到数据库
                 }
@@ -40,7 +40,7 @@ public class Utility {
      *  解析和处理服务器响应的市级数据
      *
      * */
-    public static boolean handleCityResponse(String response) {
+    public static boolean handleCityResponse(String response, int provinceId) {
         if (!TextUtils.isEmpty(response)) {
             try {
                 JSONArray cityData = new JSONArray(response);
@@ -49,7 +49,7 @@ public class Utility {
                     CityEntity cityEntity = new CityEntity();
                     cityEntity.setId(cityObject.getInt("id"));
                     cityEntity.setCityName(cityObject.getString("name"));
-                    cityEntity.setProviceId(cityObject.getInt("provinceId"));
+                    cityEntity.setProviceId(provinceId);
                     cityEntity.save();
                 }
                 return true;
